@@ -17,5 +17,5 @@ int main(void) {
     clock_t end = clock();
     dtime +=  (double) (end - begin) / CLOCKS_PER_SEC;
 
-    printf("%i \nTime Spent: %f seconds", summation, dtime);
+    printf("%i \nTime Elapsed: %f seconds", summation, dtime);
 }
