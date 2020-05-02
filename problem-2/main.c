@@ -1,10 +1,14 @@
 #include <stdio.h>
+#include <time.h>
 
 int fibonacci(int n);
 
 int main(void) {
+    double dtime = 0.0;
     int n = 3;
     int summation = 0;
+
+    clock_t begin = clock();
 
     while (fibonacci(n) < 4000000) {
         int value = fibonacci(n);
@@ -15,7 +19,10 @@ int main(void) {
         n += 3;
     }
 
-    printf("%i", summation);
+    clock_t end = clock();
+    dtime += (double) (end - begin) / CLOCKS_PER_SEC;
+
+    printf("%i \nTime Spent: %f seconds", summation, dtime);
 }
 
 int fibonacci(int n) {
